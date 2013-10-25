@@ -21,6 +21,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def correct_user?(user)
+    user == current_user
+  end
+
   # GET /users/new
   # GET /users/new.json
   def new

@@ -4,7 +4,15 @@ Onehitmusic::Application.routes.draw do
 
   resources :users
 
-  root to: "welcome#index"
+  root :to => "posts#index"
+
+  get 'profile', to: 'users#show'
+
+
+  match "signup" => "users#new", :as => "signup"
+  post "login" => "sessions#create", :as => "login"
+  get "login" => "sessions#new", :as => "login"
+  match "logout" => "sessions#destroy", :as => "logout"
 
 
   # The priority is based upon order of creation:
