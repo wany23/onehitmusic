@@ -4,7 +4,7 @@ Onehitmusic::Application.routes.draw do
 
   resources :users
 
-  root to: "welcome#index"
+  root to: "posts#index"
 
 
   # The priority is based upon order of creation:
