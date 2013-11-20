@@ -1,10 +1,20 @@
 Onehitmusic::Application.routes.draw do
-  devise_for :users
+  resources :comments
 
-  resources :posts
+
+  devise_for :users 
+
+  resources :posts do
+    resources :comments
+  end
+
+
+  #resources :users do
+  #    resources :posts
+  # end
 
   root to: "posts#index"
-
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
